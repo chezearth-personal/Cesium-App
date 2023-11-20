@@ -1,13 +1,13 @@
 import React from "react";
 import Map3d from "./components/Map3d";
 
-export default function App() {
+export default async function App() {
   return (
     <div>
       <h2>
         This is my React component here!
       </h2>
-      <Map3d/>
+      await <Map3d/>
     </div>
   );
 }

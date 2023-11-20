@@ -4,5 +4,5 @@ import App from "./src/App";
 
 // ReactDOM.render(<App />, document.getElementById("root"));
 const root = createRoot(document.getElementById("root"));
-root.render(<App/>);
+await root.render(<App/>);
 
