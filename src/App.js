@@ -1,10 +1,14 @@
 import React from "react";
+import Map3d from "./components/Map3d";
 
 export default function App() {
   return (
-    <h2>
-      This is my React component here!
-    </h2>
+    <div>
+      <h2>
+        This is my React component here!
+      </h2>
+      <Map3d/>
+    </div>
   );
 }
 
