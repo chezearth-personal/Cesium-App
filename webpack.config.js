@@ -1,5 +1,6 @@
 const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
+const {webpack} = require("webpack");
 require("babel-register");
 
 module.exports = {
@@ -20,6 +21,13 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    fallback: {
+      zlib: false,
+      http: false,
+      https: false,
+    }
   },
   plugins: [
     new htmlWebpackPlugin({
