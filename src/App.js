@@ -1,5 +1,5 @@
 import React from "react";
-// import Map3d from "./components/Map3d";
+import Map3d from "./components/Map3d";
 
 export default function App() {
   return (
@@ -7,7 +7,7 @@ export default function App() {
       <h2>
         This is my React component here!
       </h2>
-      // await <Map3d/>
+      <Map3d/>
     </div>
   );
 }

@@ -5,7 +5,7 @@ require("babel-register");
 
 module.exports = {
   entry: {
-    index: "./index"
+    index: "./src/index"
   },
   output: {
     path: path.resolve(__dirname, "./app"),
@@ -24,9 +24,12 @@ module.exports = {
   },
   resolve: {
     fallback: {
-      zlib: false,
-      http: false,
-      https: false,
+      zlib: require.resolve("browserify-zlib"),
+      http: require.resolve("stream-http"),
+      https: require.resolve("https-browserify"),
+      buffer: require.resolve("buffer/"),
+      assert: require.resolve("assert/"),
+      stream: require.resolve("stream-browserify")
     }
   },
   plugins: [
