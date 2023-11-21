@@ -1,5 +1,7 @@
-import React from "react";
+// import React from "react";
+// window.CESIUM_BASE_URL = '/';
 import { Cartesian3, createOsmBuildingsAsync, Ion, Math as CesiumMath, Terrain, Viewer } from "cesium";
+// import "cesium/Build/Cesium/Widgets/widgets.css";
 
 export default async function Map3d() {
   /**
