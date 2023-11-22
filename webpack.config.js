@@ -1,6 +1,10 @@
+// import { path } from "path";
 const path = require("path");
+// import { htmlWebpackPlugin } from "html-webpack-plugin";
 const htmlWebpackPlugin = require("html-webpack-plugin");
+// import { webpack } from "webpack";
 const {webpack} = require("webpack");
+// import "babel-register";
 require("babel-register");
 
 module.exports = {
