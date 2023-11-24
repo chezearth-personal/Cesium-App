@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-// window.CESIUM_BASE_URL = '/';
 import { Cartesian3, createOsmBuildingsAsync, Ion, Math as CesiumMath, Terrain, Viewer } from "cesium";
 import access from "../../keys/cesium-access";
-// import "cesium/Build/Cesium/Widgets/widgets.css";
 
 export default function Map3d() {
   const [mapView, setMapView] = useState({
@@ -16,8 +14,8 @@ export default function Map3d() {
       * Your access token can be found at: https://ion.cesium.com/tokens
       */
     console.log(access);
-    // setMapView(mapView => Object.assign(mapView, {viewer: access}));
     Ion.defaultAccessToken = access.key;
+    window.CESIUM_BASE_URL = '/';
     /**
       * Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
       */
@@ -38,11 +36,17 @@ export default function Map3d() {
     /**
       * Add Cesium OSM Buildings, a global 3D buildings layer.
       */
-    (async function fetchMapSet() {
-      const buildingTileset = await createOsmBuildingsAsync();
-      viewer.scene.primitives.add(buildingTileset);
-      setMapView(mapView => Object.assign(mapView, {viewer: viewer}));
-    })();
+    createOsmBuildingsAsync()
+      .then(buildingTileset => {
+        viewer.scene.primitives.add(buildingTileset);
+        setMapView(mapView => Object.assign(mapView, { viewer: viewer }));
+      })
+      .catch(err => console.log("Error with fetching tileset", err));
+    // (async function fetchMapSet() {
+      // const buildingTileset = await createOsmBuildingsAsync();
+      // viewer.scene.primitives.add(buildingTileset);
+      // setMapView(mapView => Object.assign(mapView, {viewer: viewer}));
+    // })();
   }, []);
   return (
     <div>
