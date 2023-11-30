@@ -47,7 +47,7 @@ export default function Map3d() {
       // viewer.scene.primitives.add(buildingTileset);
       // setMapView(mapView => Object.assign(mapView, {viewer: viewer}));
     // })();
-  }, []);
+  }, [0]);
   return (
     <div>
       <p>Map will go here</p>
